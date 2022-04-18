@@ -1,0 +1,5 @@
+## Antes de iniciar
+Antes de iniciar o manuseio da aplicação, entre na pasta "Backend" e rode o script "node index.js" no terminal.
+
+## Corrigindo eventuais erros de CORS
+Adicione sempre sua URL local na área CORS do documento index.js na pasta Backend para corrigir eventuais erros de CORS.

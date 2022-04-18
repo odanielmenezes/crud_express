@@ -18,7 +18,6 @@ server.get("/users", (req, res) => {
 
 server.get("/users/:id", (req, res) => {
   const user = usuarios.users.find((e) => e.id === parseInt(req.params.id));
-  console.log(req.params.id);
   if (!user)
     return res.status(404).send("O usuário informado não foi encontrado");
 
@@ -28,24 +27,23 @@ server.get("/users/:id", (req, res) => {
 server.put("/put/:id", (req, res) => {
   const user = usuarios.users.find((e) => e.id === req.params.id)
   const { nome, sobrenome } = req.body
-  console.log(req.body);
   if(!user)
   return res.status(404).send(`Usuário de id "${req.params.id}" não encontrado!`)
 
   user.nome = nome
   user.sobrenome = sobrenome
+  console.log('requisição PUT', user)
   res.send(user);
 })
 
-server.post("/users", (req, res) => {
-  console.log('BODY', req.body)
+server.post("/post", (req, res) => {
   const user = {
     id: usuarios.users.length === 0 ? "1" : parseInt(parseInt(usuarios.users[usuarios.users.length - 1].id) + 1).toString(),
     nome: req.body.nome,
     sobrenome: req.body.sobrenome
   };
   usuarios.users.push(user);
-  console.log('AAAAAA', usuarios.users)
+  console.log('requisição POST', user)
   res.send(user);
 });
 
@@ -56,7 +54,7 @@ server.delete("/delete/:id", (req, res) => {
 
   const index = usuarios.users.indexOf(user);
   usuarios.users.splice(index, 1);
-
+  console.log('requisição DELETE', user)
   res.send(user)
 })
 

@@ -19,7 +19,7 @@
             <div class="confirm">
                 <div id="info-confirm"></div>
                 <div class="buttons-confirm">
-                    <button onclick="onConfirmDelete()" id="button-deletar">DELETAR</button>
+                    <button onclick="onConfirmDelete()" id="button-deletar"></button>
                     <button id="button-cancela" onclick="closeModal()">CANCELAR</button>
                 </div>
             </div>
@@ -41,8 +41,8 @@
             <span>ATUALIZAR</span>
         </button>
         <div id="pesquisa">
-            <input type="text" name="pesquisa" id="input-pesquisa" onchange="e => updateValue(e)"/>
-                <i class="fas fa-search" ></i>
+            <input type="text" placeholder="Busque por nome, sobrenome ou ID" name="pesquisa" id="input-pesquisa" onchange="e => updateValue(e)"/>
+                <i class="fas fa-search" onclick="updateValue" ></i>
         </div>
         <div id="oi">
         </div>
