@@ -57,16 +57,6 @@ span#id {
     margin: 20px auto;
 }
 
-#pesquisa {
-    width: 50%;
-    margin: 20px auto;
-}
-#input-pesquisa {
-    width: 95%;
-    border: none;
-    outline: none;
-}
-
 #nome, #sobrenome, #pesquisa {
     outline: none;
     border: 1px solid rgba(10,149,255, 1);
@@ -158,6 +148,21 @@ svg#delete-icon{
     justify-content: center;
     align-items: center;
 }
+.none.modal-busca {
+    margin: -8px;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgb(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.none.modal-busca#button-deletar, .none.modal-busca#button-cancela {
+    display: none;
+}
+
 .none {
     display: none;
 }
@@ -173,7 +178,7 @@ svg#delete-icon{
 .confirm {
     min-width: 500px;
     height: 300px;
-    background-color: rgba(68,87,96, 1);
+    background-color: rgba(43,55,61, 1);
     border: 5px solid rgba(10,149,255, 1);
     color: white;
     display: flex;
@@ -193,4 +198,12 @@ svg#delete-icon{
 }
 #pesquisa {
     display: flex;
+    width: 30%;
+    margin: 20px auto;
+}
+
+#input-pesquisa {
+    width: 100%;
+    border: none;
+    outline: none;
 }
