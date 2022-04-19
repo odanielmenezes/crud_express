@@ -13,6 +13,7 @@
     align-items: center;
     padding: 20px 0;
     width: 50%;
+    min-width: 500px;
     margin: 0 auto;
     border-radius: 5px;
     border: 5px solid rgba(10,149,255, 1);;
@@ -59,11 +60,13 @@ span#id {
 
 #nome, #sobrenome, #pesquisa {
     outline: none;
-    border: 1px solid rgba(10,149,255, 1);
+    border: none;
+    border-bottom: 1px solid rgba(10,149,255, 1);
     color: #FFF;
     padding: 5px;
     font-weight: bold;
     font-size: 16px;
+    margin: 10px 0;
 }
 
 #title-principal, #title-page {
@@ -198,12 +201,30 @@ svg#delete-icon{
 }
 #pesquisa {
     display: flex;
-    width: 30%;
+    width: 0;
+    border: none;
     margin: 20px auto;
+    padding: 5px 10px;
+    transition: .5s;
 }
 
 #input-pesquisa {
     width: 100%;
     border: none;
     outline: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#pesquisa:hover {
+    width: 350px;
+    transition: .5s;
+}
+
+#src-icon {
+    margin: 0 -23px;
+    background-color: rgba(10,149,255, 1);
+    padding: 14px;
+    cursor: pointer;
+    border-radius: 50%;
 }

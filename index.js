@@ -1,4 +1,4 @@
-var filmes = [];
+var usuarios = [];
 var method = "POST";
 var index = 0;
 var valueOk = false;
@@ -9,12 +9,12 @@ const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get("myParam");
 console.log("myParam", location);
 
-window.onload = getData(filmes);
+window.onload = getData(usuarios);
 async function getData(users) {
   const response = await fetch("http://localhost:3000/users");
   const data = await response.json().then(
     (res) => (
-      (filmes = res),
+      (usuarios = res),
       (users =
         res.length === 0
           ? "NO DATA"
@@ -41,7 +41,7 @@ async function getData(users) {
   else {
     document.getElementById("oi").innerHTML = users;
   }
-console.log(filmes)
+console.log(usuarios)
 
 }
 
@@ -55,7 +55,7 @@ for (let i = 0; i < document.getElementById('oi').childNodes.length; i++) {
 input.addEventListener('change', updateValue);
 
 function updateValue(e) {
-  var output = filmes.filter(user => user.nome == e.target.value || user.sobrenome == e.target.value || user.id == e.target.value);
+  var output = usuarios.filter(user => user.nome == e.target.value || user.sobrenome == e.target.value || user.id == e.target.value);
   if (output.length === 0) {
     openModalBusca(e.target.value)
   } else {
@@ -88,7 +88,7 @@ function openModalBusca(busca) {
 }
 
 function openModal(idUser) {
-  const user = filmes.find(e => e.id == idUser);
+  const user = usuarios.find(e => e.id == idUser);
   document.getElementById('button-deletar').innerText = "DELETAR"
   document.querySelector('.none').classList.add('modal')
   document.getElementById('info-confirm').innerHTML = `<div>Deseja deletar o usuário <br /><b>${user.nome + " " + user.sobrenome}</b> ?</div>`
@@ -109,13 +109,17 @@ function deleteUser(idUser) {
 
 function editUser(idUser) {
   method = "PUT";
-  const dados = filmes.find((e) => e.id == idUser);
+  const dados = usuarios.find((e) => e.id == idUser);
   index = dados.id;
   console.log(dados);
   if (dados) {
     document.getElementById("nome").value = dados.nome;
     document.getElementById("sobrenome").value = dados.sobrenome;
   }
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
 }
 
 function clearFields() {
@@ -138,7 +142,7 @@ function addUser() {
       };
       console.log(data);
       fetch("http://localhost:3000/post", {
-        method: method,
+        method: "POST",
         headers: {
           Accept: "application/json text/plain */*",
           "Content-Type": "application/json",
@@ -156,7 +160,7 @@ function addUser() {
         sobrenome: document.getElementById("sobrenome").value,
       };
       fetch(`http://localhost:3000/put/${index}`, {
-        method: method,
+        method: "PUT",
         headers: {
           Accept: "application/json text/plain */*",
           "Content-Type": "application/json",
