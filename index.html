@@ -29,10 +29,8 @@
         style="width: 200px; height: 200px; margin: 0 auto;" loop autoplay></lottie-player>
         <h3 id="title-page">CADASTRO DE USUÁRIO</h3>
         <div id="form">
-            <label>Nome:</label>
-            <input type="text" name="nome" id="nome" />
-            <label>Sobrenome:</label>
-            <input type="text" id="sobrenome" name="sobrenome" />
+            <input placeholder="NOME DO USUÁRIO" type="text" name="nome" id="nome" />
+            <input placeholder="SOBRENOME DO USUÁRIO" type="text" id="sobrenome" name="sobrenome" />
             <input id="button-enviar" type="submit" value="OK" onclick="addUser()" />
             <input id="button-limpar" type="button" onclick="clearFields()" value="LIMPAR">
         </div>
@@ -41,8 +39,8 @@
             <span>ATUALIZAR</span>
         </button>
         <div id="pesquisa">
-            <input type="text" placeholder="Busque por nome, sobrenome ou ID" name="pesquisa" id="input-pesquisa" onchange="e => updateValue(e)"/>
-                <i class="fas fa-search" onclick="updateValue" ></i>
+            <input type="text" placeholder="BUSQUE POR NOME, SOBRENOME OU ID" name="pesquisa" id="input-pesquisa" onchange="e => updateValue(e)"/>
+            <i id="src-icon" class="fas fa-search" onclick="updateValue" ></i>
         </div>
         <div id="oi">
         </div>
