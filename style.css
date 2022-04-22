@@ -1,36 +1,42 @@
 * {
     font-family: 'Courier New', Courier, monospace;
-    background-color: rgba(43,55,61, 1);
-    color: #FFF;
+    background-color: rgba(43, 55, 61, 1);
 }
+
 .content {
     display: flex;
     flex-direction: column;
 }
+
 #oi {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 0;
+    padding: 30px 0;
     width: 50%;
     min-width: 500px;
     margin: 0 auto;
-    border-radius: 5px;
-    border: 5px solid rgba(10,149,255, 1);;
+    overflow: auto;
+    border-top: 5px solid rgba(10, 149, 255, 1);
     color: #FFF;
-    background-color: rgba(43,55,61, 1);
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, .8);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, .5);
 }
+
 #data {
     overflow: auto;
     border-radius: 5px;
-    display: flex;
     justify-content: space-between;
     width: 90%;
-    background-color: rgba(43,55,61, 1);
+    background-color: rgba(43, 55, 61, 1);
+    padding: 10px 0;
+    display: flex;
 }
+
+#data:hover {
+    background-color: rgba(10, 149, 255, .1);
+}
+
 button#button-att {
-    background-color: rgba(10,149,255, 1);;
     margin: 0 auto 20px auto;
     border: none;
     color: white;
@@ -38,19 +44,7 @@ button#button-att {
     cursor: pointer;
     width: 200px;
 }
-button:active {
-    background-color: #CECECE;
-    color: rgba(10,149,255, 1);;
-}
 
-span#id {
-    font-weight: bold;
-    margin: 0 20px;
-    background-color: rgba(43,55,61, 1);
-}
-.last_name {
-    background-color: rgba(43,55,61, 1);
-}
 #form {
     display: flex;
     flex-direction: column;
@@ -58,10 +52,12 @@ span#id {
     margin: 20px auto;
 }
 
-#nome, #sobrenome, #pesquisa {
+#nome,
+#sobrenome,
+#pesquisa {
     outline: none;
     border: none;
-    border-bottom: 1px solid rgba(10,149,255, 1);
+    border-bottom: 1px solid rgba(10, 149, 255, 1);
     color: #FFF;
     padding: 5px;
     font-weight: bold;
@@ -69,64 +65,78 @@ span#id {
     margin: 10px 0;
 }
 
-#title-principal, #title-page {
+#title-principal,
+#title-page {
     text-align: center;
-}
-
-#data{
-    margin: 0;
-    padding: 20px 0;
-    display: flex;
+    color: #FFF;
 }
 
 svg#edit-icon {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    background-color: rgba(43,55,61, 1);
+    background-color: transparent;
+    transition: .1s;
 }
 
-svg#delete-icon{
+svg#delete-icon {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    background-color: rgba(43,55,61, 1);
+    background-color: transparent;
+    transition: .3s;
 }
 
-#users{
+svg#delete-icon:hover, svg#edit-icon:hover {
+    color: rgba(10, 149, 255, 1);
+    transition: .1s;
+}
+
+#users {
     display: flex;
     margin: 20px 0;
-    background-color: rgba(43,55,61, 1);
+    background-color: transparent;
 }
 
-.first_name, #acoes {
-    margin: 0 20px;
-    background-color: rgba(43,55,61, 1);
+.first_name,
+.last_name
+{
+    margin: 0 10px;
+    background-color: transparent;
 }
 
 #acoes {
     display: flex;
     align-items: center;
+    background-color: transparent;
 }
 
-#acoes svg{
+#acoes svg {
     margin: 0 10px;
 }
 
 #id {
     font-weight: bold;
-    background-color: rgba(43,55,61, 1);
+    background-color: transparent;
+    margin: 0 10px;
+    color: rgba(10, 249, 255, 1);
 }
 
-#button-enviar, #button-limpar, #button-att, #button-deletar, #button-cancela {
+#button-enviar,
+#button-limpar,
+#button-att,
+#button-deletar,
+#button-cancela {
     border: none;
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
 }
 
-#button-enviar, #button-att, #button-deletar {
-    background-color: rgba(10,149,255, 1);
+#button-enviar,
+#button-att,
+#button-deletar {
+    background-color: rgba(10, 149, 255, 1);
 }
 
 #button-enviar {
@@ -135,12 +145,14 @@ svg#delete-icon{
 }
 
 #button-limpar {
-    background-color: rgba(10,149,255, .2);
+    background-color: rgba(10, 149, 255, .2);
     color: white;
 }
+
 #button-att span {
-    background-color: rgba(10,149,255, 1);
+    background-color: rgba(10, 149, 255, 1);
 }
+
 .none.modal {
     margin: -8px;
     width: 100vw;
@@ -151,6 +163,7 @@ svg#delete-icon{
     justify-content: center;
     align-items: center;
 }
+
 .none.modal-busca {
     margin: -8px;
     width: 100vw;
@@ -162,50 +175,70 @@ svg#delete-icon{
     align-items: center;
 }
 
-.none.modal-busca#button-deletar, .none.modal-busca#button-cancela {
+.none.modal-busca #button-cancela {
     display: none;
+}
+
+.none.modal-busca #button-deletar {
+    width: 250px;
+} 
+
+.none.modal-busca#button-deletar,
+.none.modal-busca#button-cancela {
+    display: none;
+}
+
+#button-cancela {
+    color: #FFF;
 }
 
 .none {
     display: none;
 }
+
 #info-confirm {
     display: flex;
     align-items: center;
     text-align: center;
     margin: 20px;
 }
+
 #info-confirm b {
-    color: rgba(10,249,255, 1);
+    color: rgba(10, 249, 255, 1);
 }
+
 .confirm {
     min-width: 500px;
     height: 300px;
-    background-color: rgba(43,55,61, 1);
-    border: 5px solid rgba(10,149,255, 1);
+    background-color: rgba(43, 55, 61, 1);
+    border: 5px solid rgba(10, 149, 255, 1);
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
-.buttons-confirm button{
+
+.buttons-confirm button {
     border: none;
     padding: 10px;
     font-size: 16px;
-    background-color: rgba(10,149,255, .2);
+    background-color: rgba(10, 149, 255, .2);
 }
+
 #button-deletar {
-    background-color: rgba(10,149,255, 1);
+    background-color: rgba(10, 149, 255, 1);
     color: white;
 }
+
 #pesquisa {
     display: flex;
     width: 0;
     border: none;
     margin: 20px auto;
-    padding: 5px 10px;
     transition: .5s;
+    display: flex;
+    align-items: center;
 }
 
 #input-pesquisa {
@@ -214,6 +247,8 @@ svg#delete-icon{
     outline: none;
     font-weight: bold;
     font-size: 16px;
+    color: #FFF;
+    margin: 20px 0;
 }
 
 #pesquisa:hover {
@@ -223,7 +258,7 @@ svg#delete-icon{
 
 #src-icon {
     margin: 0 -23px;
-    background-color: rgba(10,149,255, 1);
+    background-color: rgba(10, 149, 255, 1);
     padding: 14px;
     cursor: pointer;
     border-radius: 50%;
