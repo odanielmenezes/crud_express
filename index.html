@@ -25,22 +25,25 @@
             </div>
         </div>
         <h1 id="title-principal">API COM NODEJS E EXPRESS</h1>
-        <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_1cazwtnc.json" background="transparent" speed="1"
-        style="width: 200px; height: 200px; margin: 0 auto;" loop autoplay></lottie-player>
+        <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_1cazwtnc.json" background="transparent"
+            speed="1" style="width: 200px; height: 200px; margin: 0 auto;" loop autoplay></lottie-player>
         <h3 id="title-page">CADASTRO DE USUÁRIO</h3>
+        <form>
         <div id="form">
-            <input placeholder="NOME DO USUÁRIO" type="text" name="nome" id="nome" />
-            <input placeholder="SOBRENOME DO USUÁRIO" type="text" id="sobrenome" name="sobrenome" />
-            <input id="button-enviar" type="submit" value="OK" onclick="addUser()" />
-            <input id="button-limpar" type="button" onclick="clearFields()" value="LIMPAR">
+                <input placeholder="NOME DO USUÁRIO*" type="text" name="nome" id="nome"/>
+                <input placeholder="SOBRENOME DO USUÁRIO*" type="text" id="sobrenome" name="sobrenome"/>
+                <input id="button-enviar" type="submit" value="OK" onclick="addUser()" />
+                <input id="button-limpar" type="button" onclick="clearFields()" value="LIMPAR">
+            </form>
         </div>
 
         <button id="button-att" onclick="attScreen()">
             <span>ATUALIZAR</span>
         </button>
         <div id="pesquisa">
-            <input type="text" placeholder="BUSQUE POR NOME, SOBRENOME OU ID" name="pesquisa" id="input-pesquisa" onchange="e => updateValue(e)"/>
-            <i id="src-icon" class="fas fa-search" onclick="updateValue" ></i>
+            <input type="text" placeholder="BUSQUE POR NOME, SOBRENOME OU ID" name="pesquisa" id="input-pesquisa"
+                onchange="e => updateValue(e)" />
+            <i id="src-icon" class="fas fa-search" onclick="updateValue"></i>
         </div>
         <div id="oi">
         </div>
